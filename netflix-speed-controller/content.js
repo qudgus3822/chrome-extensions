@@ -18,14 +18,14 @@ function setPlaybackSpeed(speed) {
   }
 }
 
-// Space 키 이벤트 핸들러
+// Ctrl 키 이벤트 핸들러
 function handleKeyDown(event) {
   if (!isEnabled) return;
 
-  // Space 키이고, 입력 필드에 포커스가 없을 때만 동작
-  if (event.code === 'Space' && !isInputFocused()) {
-    if (!isSpacePressed) {
-      isSpacePressed = true;
+  // Ctrl 키 (왼쪽 또는 오른쪽)
+  if ((event.code === 'ControlLeft' || event.code === 'ControlRight' || event.key === 'Control') && !isInputFocused()) {
+    if (!isCtrlPressed) {
+      isCtrlPressed = true;
       const video = findVideoElement();
       if (video) {
         originalSpeed = video.playbackRate;
@@ -40,9 +40,9 @@ function handleKeyDown(event) {
 function handleKeyUp(event) {
   if (!isEnabled) return;
 
-  if (event.code === 'Space' && !isInputFocused()) {
-    if (isSpacePressed) {
-      isSpacePressed = false;
+  if ((event.code === 'ControlLeft' || event.code === 'ControlRight' || event.key === 'Control') && !isInputFocused()) {
+    if (isCtrlPressed) {
+      isCtrlPressed = false;
       setPlaybackSpeed(originalSpeed);
       event.preventDefault();
       event.stopPropagation();
