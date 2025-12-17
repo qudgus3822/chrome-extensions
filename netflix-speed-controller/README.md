@@ -62,17 +62,16 @@ netflix-speed-controller/
 ├── vite.config.ts         # Vite 빌드 설정
 ├── tsconfig.json          # TypeScript 설정
 ├── src/
-│   ├── content.ts        # 메인 로직 (Ctrl 키 이벤트 처리)
-│   ├── popup.ts          # 팝업 UI 로직
-│   └── ui/
-│       ├── popup.html    # 팝업 HTML
-│       └── popup.css     # 팝업 스타일
-├── public/                # 정적 파일
+│   ├── content.ts        # 메인 로직 (Ctrl/Alt 키 이벤트 처리)
+│   └── popup.ts          # 팝업 UI 로직
+├── public/                # 정적 파일 (빌드 시 dist/로 복사됨)
 │   ├── popup.html
 │   └── popup.css
-├── dist/                  # 빌드 결과물
+├── dist/                  # 빌드 결과물 (git ignore)
 │   ├── content.js
-│   └── popup.js
+│   ├── popup.js
+│   ├── popup.html
+│   └── popup.css
 └── icons/                 # 아이콘 (추가 필요)
     ├── icon16.png
     ├── icon48.png
