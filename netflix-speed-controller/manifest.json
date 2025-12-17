@@ -2,21 +2,22 @@
   "manifest_version": 3,
   "name": "Netflix Speed Controller",
   "version": "1.0.0",
-  "description": "Netflix 재생 속도를 세밀하게 조절할 수 있는 확장 프로그램",
+  "description": "Netflix와 YouTube에서 Ctrl/Alt 키로 2~3배속 재생을 제어할 수 있는 확장 프로그램",
   "permissions": [
     "storage",
     "activeTab"
   ],
   "host_permissions": [
-    "https://www.netflix.com/*"
+    "https://www.netflix.com/*",
+    "https://www.youtube.com/*"
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "dist/popup.html"
   },
   "content_scripts": [
     {
       "matches": ["https://www.netflix.com/*", "https://www.youtube.com/*"],
-      "js": ["content.js"],
+      "js": ["dist/content.js"],
       "run_at": "document_idle"
     }
   ]

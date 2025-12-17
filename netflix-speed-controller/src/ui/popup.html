@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Speed Controller</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Netflix Speed Controller</h1>
+
+    <div class="toggle-container">
+      <label class="toggle-label">
+        <input type="checkbox" id="enableToggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-text" id="toggleText">OFF</span>
+    </div>
+
+    <div class="info">
+      <div>Ctrl 키: 2배속 재생</div>
+      <div>Alt 키: 3배속 재생</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
