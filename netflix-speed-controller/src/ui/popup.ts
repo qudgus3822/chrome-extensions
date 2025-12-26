@@ -27,7 +27,7 @@ toggle?.addEventListener("change", () => {
         chrome.tabs.sendMessage(
           tabs[0].id || 0,
           { action: "toggleEnabled", enabled: enabled },
-          (response) => {
+          (_) => {
             if (chrome.runtime.lastError) {
               console.error("Error:", chrome.runtime.lastError);
             }
