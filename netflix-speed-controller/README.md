@@ -34,9 +34,22 @@ npm run build
 
 # 개발 모드 (파일 변경 감지)
 npm run dev
+
+# 배포 패키지 생성 (빌드 + deploy 폴더에 복사)
+npm run deploy
 ```
 
 ## Chrome 확장 프로그램 설치
+
+### 방법 1: Deploy 폴더 사용 (권장)
+
+1. 터미널에서 `npm run deploy` 실행
+2. Chrome 브라우저에서 `chrome://extensions/` 페이지로 이동
+3. 우측 상단의 '개발자 모드' 토글을 활성화
+4. '압축해제된 확장 프로그램을 로드합니다' 버튼 클릭
+5. **`deploy` 폴더** 선택
+
+### 방법 2: 직접 빌드
 
 1. 터미널에서 `npm run build` 실행
 2. Chrome 브라우저에서 `chrome://extensions/` 페이지로 이동
