@@ -17,3 +17,13 @@ export function getCurrentSpeed(): number {
   const video = findVideoElement();
   return video ? video.playbackRate : 1.0;
 }
+
+// 해상도를 1920x1080으로 변경
+export function setResolution1080p(): void {
+  const video = findVideoElement();
+  if (video) {
+    video.style.width = "1920px";
+    video.style.height = "1080px";
+    console.log("Resolution set to: 1920x1080");
+  }
+}

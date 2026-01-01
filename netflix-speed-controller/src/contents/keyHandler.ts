@@ -1,4 +1,4 @@
-import { setPlaybackSpeed, findVideoElement } from "./videoController";
+import { setPlaybackSpeed, findVideoElement, setResolution1080p } from "./videoController";
 
 // 키 상태
 let isCtrlPressed = false;
@@ -36,6 +36,13 @@ function handleKeyDown(event: KeyboardEvent): void {
   const video = findVideoElement();
   if (!video) return;
 
+  // 왼쪽 Shift 키 (해상도 1920x1080 변경)
+  if (event.code === "ShiftLeft") {
+    setResolution1080p();
+    event.preventDefault();
+    event.stopPropagation();
+    return;
+  }
   // Ctrl 키 (2배속)
   if (
     event.code === "ControlLeft" ||
