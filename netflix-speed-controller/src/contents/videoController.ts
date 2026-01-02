@@ -8,14 +8,12 @@ export function findAllVideoElements(): NodeListOf<HTMLVideoElement> {
   return document.querySelectorAll("video");
 }
 
-// 재생 속도 변경 (모든 비디오 요소에 적용)
+// 재생 속도 변경 
 export function setPlaybackSpeed(speed: number): void {
-  const videos = findAllVideoElements();
-  if (videos.length > 0) {
-    videos.forEach((video, index) => {
-      video.playbackRate = speed;
-      console.log(`Playback speed set to: ${speed}x for video #${index + 1}`);
-    });
+  const video = findVideoElement();
+  if (video) {
+    video.playbackRate = speed;
+    console.log(`Playback speed set to: ${speed}x for video`);
   } else {
     console.warn("No video elements found");
   }
