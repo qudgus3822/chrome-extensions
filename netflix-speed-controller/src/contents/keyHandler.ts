@@ -1,4 +1,8 @@
-import { setPlaybackSpeed, findVideoElement, setResolution1080p } from "./videoController";
+import {
+  setPlaybackSpeed,
+  findVideoElement,
+  setResolution1080p,
+} from "./videoController";
 
 // 키 상태
 let isCtrlPressed = false;
