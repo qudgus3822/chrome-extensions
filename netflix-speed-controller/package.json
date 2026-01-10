@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "deploy": "npm run build && node scripts/deploy.js"
   },
   "author": "",
   "license": "MIT",
