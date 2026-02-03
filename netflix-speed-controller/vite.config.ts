@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         content: resolve(__dirname, "src/contents/index.ts"),
         popup: resolve(__dirname, "src/ui/popup.ts"),
+        netflixVolumeBooster: resolve(__dirname, "src/contents/netflixVolumeBooster.ts"),
       },
       output: {
         entryFileNames: "[name].js",
