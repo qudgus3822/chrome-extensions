@@ -62,12 +62,8 @@ function handleKeyDown(event: KeyboardEvent): void {
       event.stopPropagation();
     }
   }
-  // Alt 키 (3배속)
-  else if (
-    event.code === "AltLeft" ||
-    event.code === "AltRight" ||
-    event.key === "Alt"
-  ) {
+  // 우측 Alt 키 (3배속)
+  else if (event.code === "AltRight") {
     if (!isAltPressed && !isCtrlPressed && !isShiftPressed) {
       isAltPressed = true;
       originalSpeed = video.playbackRate;
@@ -110,12 +106,8 @@ function handleKeyUp(event: KeyboardEvent): void {
       event.stopPropagation();
     }
   }
-  // Alt 키 해제
-  else if (
-    event.code === "AltLeft" ||
-    event.code === "AltRight" ||
-    event.key === "Alt"
-  ) {
+  // 우측 Alt 키 해제
+  else if (event.code === "AltRight") {
     if (isAltPressed) {
       isAltPressed = false;
       setPlaybackSpeed(originalSpeed);
